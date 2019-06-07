@@ -2,7 +2,12 @@ package main
 
 import "errors"
 
-func IsLeap(year int) (bool, error) {
+func main() {
+}
+
+type Year int
+
+func (year Year) IsLeap() (bool, error) {
 	if year < 1583 {
 		return false, errors.New("Rok %d jest sprzed okresu wprowadzenia kalendarza gregoriańskiego")
 	}
@@ -16,7 +21,4 @@ func IsLeap(year int) (bool, error) {
 	default:
 		return false, nil
 	}
-}
-
-func main() {
 }
